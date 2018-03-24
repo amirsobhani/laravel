@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('articles.index');
-});
+Route::get('/', 'ArticleController@index');
+Route::get('/article/create', 'ArticleController@create');
+Route::post('/article', 'ArticleController@store')->name('article.store');
