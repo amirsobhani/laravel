@@ -7,6 +7,15 @@
     </h1>
     <form action="{{ route('article.store') }}" method="post">
         {!! csrf_field() !!}
+        @if(count($errors))
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="form-group">
             <label for="title">عنوان مقاله : </label>
             <input type="text" name="title" class="form-control" id="title" placeholder="لطفا عنوان را وارد کنید ...">

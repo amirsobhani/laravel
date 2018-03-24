@@ -11,6 +11,8 @@
 |
 */
 
+use \Illuminate\Database\Console\Migrations\RollbackCommand;
+
 Route::get('/', 'ArticleController@index');
 Route::get('/article/create', 'ArticleController@create');
 Route::post('/article', 'ArticleController@store')->name('article.store');
